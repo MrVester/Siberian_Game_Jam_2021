@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private float spawnRate = 3f;
     private float nextSpawn = 0.0f;
+    private Rigidbody2D objectRB;
+    public float minObjectForce=5f;
+    public float maxObjectForce=10f;
     void Start()
     {
         
@@ -26,7 +29,11 @@ public class Spawner : MonoBehaviour
         {
             nextSpawn = Time.time + spawnRate;
             spawnPosX = Random.Range(spawnZone.bounds.min.x, spawnZone.bounds.max.x);
-            Instantiate(FallingObjects[Random.Range(0, FallingObjects.Length)], new Vector3(spawnPosX, spawnPosY, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
+            GameObject obj=(GameObject)Instantiate(FallingObjects[Random.Range(0, FallingObjects.Length)], new Vector3(spawnPosX, spawnPosY, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
+            objectRB = obj.GetComponent<Rigidbody2D>();
+            float randomRangeForce= Random.Range(minObjectForce, maxObjectForce) * 0.01f;
+            objectRB.AddForce(-Vector2.up*randomRangeForce);
+            Debug.Log(randomRangeForce);
         }
     }
 
