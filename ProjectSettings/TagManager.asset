@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Object
+  - Destructor
+  - Heart
+  - Trash
   layers:
   - Default
   - TransparentFX
@@ -13,10 +17,10 @@ TagManager:
   - UI
   - Text
   - 
-  - 
-  - 
-  - 
-  - 
+  - Background Objects
+  - Platform
+  - Character
+  - Object
   - 
   - 
   - 
@@ -40,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1112707885
+    locked: 0
+  - name: BackgroundObjects
+    uniqueID: 3807307081
     locked: 0
