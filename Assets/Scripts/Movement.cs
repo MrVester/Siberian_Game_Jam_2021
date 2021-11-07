@@ -8,21 +8,24 @@ public class Movement : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 moveVector;
     public float Speed = 1f;
-    public float accSpeed = 1.5f;
+    public float accSpeed = 2.5f;
     public float JumpForce = 5f;
     private bool Switch = true;
     private CapsuleCollider2D capsuleCollider2D;
     Animator animator;
     private bool FacingRight = true;
     public bool isFacingRight = true;
+    GameWon_Lost gamewon_lost;
+   
 
-
-    public Vector3 characterScreenPos;
-    public Camera cam;
+  
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+       
+        gamewon_lost = GameWon_Lost.instance;
+        
+            animator = GetComponent<Animator>();
         platformLayerMask = LayerMask.GetMask("Platform");
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
@@ -30,15 +33,16 @@ public class Movement : MonoBehaviour
     private void Update()
     {
 
-        characterScreenPos = cam.WorldToScreenPoint(transform.position);
-        Debug.Log(Input.mousePosition);
-        FlipCharacter();
-        if (isOnGround())
-        {
-            Jump();
-            Walk();
-        }
 
+        if (!gamewon_lost.GameEnded)
+        {
+            FlipCharacter();
+            if (isOnGround())
+            {
+                Jump();
+                Walk();
+            }
+        }
     }
   
 
@@ -72,7 +76,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround())
         {
-            animator.Play("Main_char_jump");
+            animator.Play("Pers_Jump");
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
         }
 

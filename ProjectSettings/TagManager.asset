@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Object
   - Destructor
+  - Heart
+  - Trash
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - 
   - 
   - Background Objects
-  - 
-  - 
-  - 
+  - Platform
+  - Character
+  - Object
   - 
   - 
   - 

@@ -14,27 +14,36 @@ public class Spawner : MonoBehaviour
     private Rigidbody2D objectRB;
     public float minObjectForce=5f;
     public float maxObjectForce=10f;
+
+    GameWon_Lost gamewon_lost;
+   
+
+
     void Start()
     {
-        
-        spawnPosY = spawnZone.bounds.center.y;
+     
+        gamewon_lost = GameWon_Lost.instance;
+       
+            spawnPosY = spawnZone.bounds.center.y;
     }
 
- 
+
     void Update()
     {
 
-       
-        if (Time.time > nextSpawn)
+
+        if (!gamewon_lost.GameEnded)
         {
-            nextSpawn = Time.time + spawnRate;
-            spawnPosX = Random.Range(spawnZone.bounds.min.x, spawnZone.bounds.max.x);
-            GameObject obj=(GameObject)Instantiate(FallingObjects[Random.Range(0, FallingObjects.Length)], new Vector3(spawnPosX, spawnPosY, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
-            objectRB = obj.GetComponent<Rigidbody2D>();
-            float randomRangeForce= Random.Range(minObjectForce, maxObjectForce) * 0.01f;
-            objectRB.AddForce(-Vector2.up*randomRangeForce);
-            Debug.Log(randomRangeForce);
+            if (Time.time > nextSpawn)
+            {
+                nextSpawn = Time.time + spawnRate;
+                spawnPosX = Random.Range(spawnZone.bounds.min.x, spawnZone.bounds.max.x);
+                GameObject obj = (GameObject)Instantiate(FallingObjects[Random.Range(0, FallingObjects.Length)], new Vector3(spawnPosX, spawnPosY, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
+                objectRB = obj.GetComponent<Rigidbody2D>();
+                float randomRangeForce = Random.Range(minObjectForce, maxObjectForce) * 0.01f;
+                objectRB.AddForce(-Vector2.up * randomRangeForce);
+                Debug.Log(randomRangeForce);
+            }
         }
     }
-
 }

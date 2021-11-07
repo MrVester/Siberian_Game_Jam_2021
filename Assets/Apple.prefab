@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2786500433596855143}
   - component: {fileID: 8765940508167627024}
   - component: {fileID: 4954783309574731487}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Apple
-  m_TagString: Object
+  m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.004526043, y: -0.008046269}

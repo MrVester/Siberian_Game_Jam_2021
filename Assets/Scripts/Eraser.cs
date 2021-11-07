@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using PathCreation;
 
 public class Eraser : MonoBehaviour
@@ -13,10 +14,13 @@ public class Eraser : MonoBehaviour
     public float spawnRate = 0.1f;
     public GameObject maskPrefab;
     List<GameObject> eraserClonesList;
+    public GameObject PersnBlueprint;
+    public GameObject Panel;
+    public GameObject Txt;
 
     private void Start()
     {
-
+       
         eraserClonesList = new List<GameObject>();
     }
     void Update()
@@ -26,12 +30,17 @@ public class Eraser : MonoBehaviour
         transform.position = eraserPath.path.GetPointAtDistance(distanceTravelled);
         if (eraserPath.path.GetClosestTimeOnPath(transform.position) >= 0.98f)//После стирания объектов выполнить далее:
         {
+           
             Destroy(gameObject);
+            PersnBlueprint.SetActive(false);
+            Txt.SetActive(false);
             foreach (GameObject erClone in eraserClonesList)
             {
                 GameObject.Destroy(erClone);
             }
+            Panel.SetActive(true);
             
+
         }
         if (Time.time > nextSpawn)
         {

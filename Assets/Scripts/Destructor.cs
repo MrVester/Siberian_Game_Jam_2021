@@ -7,7 +7,11 @@ public class Destructor : MonoBehaviour
   
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag=="Object")
+        if(collision.gameObject.tag=="Trash")
+        {
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Heart")
         {
             Destroy(collision.gameObject);
         }

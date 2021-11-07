@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public event Action DamageTaken;
     public event Action HealthUpgraded;
+    Timer timer;
 
     public int Health
     {
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
             return health;
         }
     }
+   
 
    
     void Awake()
@@ -34,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        timer = Timer.instance;
         health = maxHealth;
     }
 
@@ -44,6 +47,7 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
         health -= 1;
+        
         if(DamageTaken != null)
         {
             DamageTaken();
@@ -54,6 +58,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health >= maxHealth)
         {
+            timer.pointsOnHealth();
             return;
         }
         health += 1;
