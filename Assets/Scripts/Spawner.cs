@@ -12,8 +12,8 @@ public class Spawner : MonoBehaviour
     private float spawnRate = 3f;
     private float nextSpawn = 0.0f;
     private Rigidbody2D objectRB;
-    public float minObjectForce=5f;
-    public float maxObjectForce=10f;
+    public float minObjectForce=0f;
+    public float maxObjectForce=3f;
 
     GameWon_Lost gamewon_lost;
    

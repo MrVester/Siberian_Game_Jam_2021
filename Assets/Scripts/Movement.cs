@@ -7,8 +7,8 @@ public class Movement : MonoBehaviour
     private LayerMask platformLayerMask;
     public Rigidbody2D rb;
     public Vector2 moveVector;
-    public float Speed = 1f;
-    public float accSpeed = 2.5f;
+    public float Speed = 2f;
+    public float accSpeed = 3f;
     public float JumpForce = 5f;
     private bool Switch = true;
     private CapsuleCollider2D capsuleCollider2D;
@@ -65,7 +65,7 @@ public class Movement : MonoBehaviour
 
         if (rb.velocity.x == 0 && Switch == false)
         {
-            Speed = 1f;
+            Speed = 2f;
             Switch = true;
         }
 

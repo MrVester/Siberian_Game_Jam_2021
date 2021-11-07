@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayAgain : MonoBehaviour
 {
-    public GameObject Game;
-   
-    void Start()
-    {
-
-    }
 
     public void ResetGame()
     {
-        Application.LoadLevel("SampleScene");
+        SceneManager.LoadScene(0);
+       // Application.LoadLevel("SampleScene");
     }
 }

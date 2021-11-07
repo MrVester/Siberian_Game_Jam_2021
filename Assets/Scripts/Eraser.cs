@@ -17,6 +17,7 @@ public class Eraser : MonoBehaviour
     public GameObject PersnBlueprint;
     public GameObject Panel;
     public GameObject Txt;
+    public Text record;
 
     private void Start()
     {
@@ -38,7 +39,9 @@ public class Eraser : MonoBehaviour
             {
                 GameObject.Destroy(erClone);
             }
+            record.text = $"Record: {PlayerPrefs.GetInt("Points")} points";
             Panel.SetActive(true);
+            
             
 
         }
