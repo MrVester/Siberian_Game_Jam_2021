@@ -2,7 +2,7 @@
 Game created on Sib GameJam
 
 Download Link:
-<a href="https://github.com/MrVester/Siberian_Game_Jam_2021/releases/tag/Blueprint's_Law" download="FILENAME">BluePrint's law</a>
+<a href="https://github.com/MrVester/Siberian_Game_Jam_2021/releases/tag/Blueprint's_Law" download="BluePrint's law">BluePrint's law</a>
 
 Описание: 
 
