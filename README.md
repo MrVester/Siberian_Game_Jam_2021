@@ -33,3 +33,9 @@ Space - прыжок
 Если все жизни игрока на месте, то, при подборе дополнительных сердечек, будут добавляться поинты.
 
 Главная цель игрока - собрать как можно больше поинтов. 
+
+![image](https://user-images.githubusercontent.com/71410796/219422667-5932d8a7-e66d-4fc8-b958-27f109ed61f5.png)
+![image](https://user-images.githubusercontent.com/71410796/219422701-ee770031-b607-4865-ab06-8fbcd7261480.png)
+![image](https://user-images.githubusercontent.com/71410796/219422716-49b6e41f-2ee9-41aa-9aa9-cfee7e8fb1be.png)
+![image](https://user-images.githubusercontent.com/71410796/219422734-b5ade80d-3b2f-4e5a-8ceb-cdb1d4b84775.png)
+
